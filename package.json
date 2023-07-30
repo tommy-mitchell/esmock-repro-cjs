@@ -1,0 +1,11 @@
+{
+	"name": "esmock-sub-node-modules",
+	"type": "module",
+	"dependencies": {
+		"esmock": "^2.3.3",
+		"meow": "^12.0.1"
+	},
+	"scripts": {
+		"test": "node --loader=esmock --no-warnings src/test.js"
+	}
+}
