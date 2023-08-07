@@ -1,0 +1,11 @@
+{
+	"exclude": ["node_modules"],
+	"include": ["src/*.ts"],
+	"compilerOptions": {
+		"module": "Node16",
+		"target": "ESNext",
+	},
+	"ts-node": {
+		"transpileOnly": true,
+	},
+}

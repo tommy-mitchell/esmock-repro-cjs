@@ -1,20 +1,20 @@
 # esmock-repro-cjs
 
-Repro for https://github.com/iambumblehead/esmock/issues/218. Run `node test` to reproduce error.
+Repro for https://github.com/iambumblehead/esmock/issues/218. Run `npm test` to reproduce error.
 
 ## Issue
 
-Mocking globally with the `import` key fails if a module has a CJS import:
+Mocking globally using TypeScript with the `import` key fails if a module has a CJS import:
 
-```js
-// src/test.js
+```ts
+// src/test.ts
 import esmock from "esmock";
 
-const logs = [];
+const logs: string[] = [];
 
-await esmock("./index.js", import.meta.url, {}, {
+await esmock("./index.ts", import.meta.url, {}, {
 	import: {
-		console: { log: (...args) => logs.push(...args) },
+		console: { log: (...args: string[]) => logs.push(...args) },
 	},
 });
 
